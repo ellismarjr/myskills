@@ -115,6 +115,8 @@ export function Home() {
         placeholderTextColor="#555"
         onChangeText={setNewSkill}
         value={newSkill}
+        onSubmitEditing={handleAddNewSkill}
+        returnKeyType="send"
       />
 
       <Button title="ADICIONAR" onPress={handleAddNewSkill} />
