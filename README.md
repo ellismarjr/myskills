@@ -4,7 +4,7 @@
 
 ## :iphone: Mobile preview
 <p align="left">
-  <img height="400" src="https://github.com/ellismarjr/myskills/blob/master/preview.gif">
+  <img height="800" src="https://github.com/ellismarjr/myskills/blob/master/preview.gif">
 </p>
 
 <h4 align="center">
