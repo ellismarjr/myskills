@@ -3,7 +3,7 @@ import { Text, TouchableOpacity, StyleSheet, TouchableOpacityProps } from 'react
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#A370f7',
+    backgroundColor: '#565BFF',
     padding: 15,
     borderRadius: 7,
     alignItems: 'center',
