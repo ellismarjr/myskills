@@ -13,7 +13,6 @@ import AsyncStorage from '@react-native-community/async-storage';
 import uuid from 'react-native-uuid';
 import Feather from 'react-native-vector-icons/Feather';
 
-import { Button } from '../components/Button';
 import { SkillCard } from '../components/SkillCard';
 import { Header } from '../components/Header';
 
