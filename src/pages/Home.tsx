@@ -155,6 +155,7 @@ export function Home() {
       <FlatList
         data={mySkills}
         keyExtractor={item => item.id}
+        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => <SkillCard handleDeleteSkill={() => handleDeleteSkill(item.id)} skill={item.name} />}
       />
     </View>
