@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,14 +13,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   buttonSkill: {
-    backgroundColor: '#E53E3E',
     paddingHorizontal: 8,
     paddingVertical: 5,
     borderRadius: 7
-  },
-  buttonSkillText: {
-    color: '#CCC',
-    fontWeight: 'bold',
   },
   skills: {
     color: '#999',
@@ -38,7 +34,7 @@ export function SkillCard({ skill, handleDeleteSkill }: SkillProps) {
     <View style={styles.container}>
       <Text style={styles.skills}>{skill}</Text>
       <TouchableOpacity onPress={handleDeleteSkill} activeOpacity={0.7} style={styles.buttonSkill}>
-        <Text style={styles.buttonSkillText}>Excluir</Text>
+        <Feather name="trash" size={20} color="#E53E3E" />
     </TouchableOpacity>
     </View>
   );
