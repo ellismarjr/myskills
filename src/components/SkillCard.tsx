@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   skills: {
-    color: '#FFF',
+    color: '#999',
     fontSize: 16,
     fontWeight: 'bold',
   },
