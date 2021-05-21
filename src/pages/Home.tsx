@@ -4,36 +4,57 @@ import {
   View,
   StyleSheet,
   TextInput,
-  Platform,
   FlatList,
   Alert,
   Keyboard,
+  TouchableOpacity,
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import uuid from 'react-native-uuid';
+import Feather from 'react-native-vector-icons/Feather';
 
 import { Button } from '../components/Button';
 import { SkillCard } from '../components/SkillCard';
+import { Header } from '../components/Header';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#121015',
     paddingHorizontal: 30,
-    paddingVertical: 30,
+    paddingTop: 30,
   },
   title: {
     color: '#FFF',
     fontSize: 24,
     fontWeight: 'bold',
   },
-  input: {
+  containerAddSkill: {
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: '#1f1e25',
+    borderRadius: 7,
+    height: 56
+  },
+  input: {
+    flex: 1,
     color: '#FFF',
     fontSize: 18,
-    padding: Platform.OS === 'ios' ? 15 : 10,
-    marginTop: 30,
-    borderRadius: 7,
+    paddingHorizontal: 15
+  },
+  button: {
+    backgroundColor: '#565BFF',
+    borderTopRightRadius: 7,
+    borderBottomRightRadius: 7,
+    height: 56,
+    width: 56,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonText: {
+    color: '#FFF',
+    fontSize: 17,
+    fontWeight: 'bold',
   },
   gretting: {
     color: '#CCC',
@@ -106,22 +127,31 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome, Júnior</Text>
-      <Text style={styles.gretting}>{gretting}</Text>
+      <Header gretting={gretting} />
 
-      <TextInput
-        style={styles.input}
-        placeholder="New skill"
-        placeholderTextColor="#555"
-        onChangeText={setNewSkill}
-        value={newSkill}
-        onSubmitEditing={handleAddNewSkill}
-        returnKeyType="send"
-      />
+      <View style={styles.containerAddSkill}>
+        <TextInput
+          style={styles.input}
+          placeholder="New skill"
+          placeholderTextColor="#555"
+          onChangeText={setNewSkill}
+          value={newSkill}
+          onSubmitEditing={handleAddNewSkill}
+          returnKeyType="send"
+        />
 
-      <Button title="ADICIONAR" onPress={handleAddNewSkill} />
+        <TouchableOpacity
+          activeOpacity={0.7}
+          style={styles.button}
+          onPress={handleAddNewSkill}
+        >
+          <Feather name="plus" size={20} color="#FFF" />
+        </TouchableOpacity>
+      </View>
 
-      <Text style={[styles.title, { marginVertical: 30 }]}>My Skills</Text>
+
+
+      <Text style={[styles.title, { marginVertical: 20 }]}>My Skills</Text>
 
       <FlatList
         data={mySkills}
