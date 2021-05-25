@@ -33,7 +33,7 @@ export function SkillCard({ skill, handleDeleteSkill }: SkillProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.skills}>{skill}</Text>
-      <TouchableOpacity onPress={handleDeleteSkill} activeOpacity={0.7} style={styles.buttonSkill}>
+      <TouchableOpacity testID={`${skill}-handleDeleteSkillButton`} onPress={handleDeleteSkill} activeOpacity={0.7} style={styles.buttonSkill}>
         <Feather name="trash" size={20} color="#E53E3E" />
     </TouchableOpacity>
     </View>
