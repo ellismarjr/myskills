@@ -9,7 +9,7 @@ import {
   Keyboard,
   TouchableOpacity,
 } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-community/async-storage';
 import uuid from 'react-native-uuid';
 import Feather from 'react-native-vector-icons/Feather';
 
