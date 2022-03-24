@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: 'bold',
   },
-  gretting: {
+  greeting: {
     color: '#CCC',
   },
 });
@@ -68,7 +68,7 @@ interface SkillData {
 export function Home() {
   const [newSkill, setNewSkill] = useState('');
   const [mySkills, setMySkills] = useState<SkillData[]>([]);
-  const [gretting, setGretting] = useState('');
+  const [greeting, setGreeting] = useState('');
 
   function checkIfSkillIsExists(skillName: string): boolean {
     return mySkills.some(skill => skill.name === skillName);
@@ -105,11 +105,11 @@ export function Home() {
     const currentHour = new Date().getHours();
 
     if (currentHour < 12) {
-      setGretting('Good morning');
+      setGreeting('Good morning');
     } else if (currentHour >= 12 && currentHour < 18) {
-      setGretting('Good afternoon');
+      setGreeting('Good afternoon');
     } else {
-      setGretting('Good night');
+      setGreeting('Good night');
     }
   }, []);
 
@@ -126,7 +126,7 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Header gretting={gretting} />
+      <Header greeting={greeting} />
 
       <View style={styles.containerAddSkill}>
         <TextInput

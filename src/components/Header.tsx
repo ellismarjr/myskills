@@ -11,20 +11,20 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
   },
-  gretting: {
+  greeting: {
     color: '#CCC',
   },
 });
 
 interface HeaderProps {
-  gretting: string;
+  greeting: string;
 }
 
-export function Header({ gretting }: HeaderProps) {
+export function Header({ greeting }: HeaderProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome, Júnior</Text>
-      <Text style={styles.gretting}>{gretting}</Text>
+      <Text style={styles.greeting}>{greeting}</Text>
     </View>
   );
 }
